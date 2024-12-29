@@ -17,9 +17,9 @@ For an example on how to use the thermal models see [TODO]
 
 ## Not (yet) Implemented
 ### True Allen Thermal (3D)
-- as described in paper
+- as described in [2]
 ### Bubble Thermal (3D)
-- as described in 
+- as described in [3]
 ### Ridge Lift
 - not really thermals but could be interesting for testing
 
@@ -42,3 +42,8 @@ Thermals are known to not always be stationary. The thermal mixture can change i
 [2] M. Allen, “Updraft Model for Development of Autonomous Soaring Uninhabited Air Vehicles,” in 44th AIAA Aerospace Sciences Meeting and Exhibit, Reno, Nevada: American Institute of Aeronautics and Astronautics, Jan. 2006. doi: 10.2514/6.2006-1510.
 
 [3] R. Bencatel, J. Tasso de Sousa, and A. Girard, “Atmospheric flow field models applicable for aircraft endurance extension,” Progress in Aerospace Sciences, vol. 61, pp. 1–25, Aug. 2013, doi: 10.1016/j.paerosci.2013.03.001.
+
+# Contact
+Lars Ehrlich
+
+Academic Flying Club at Karlsruhe Institute of Technology [https://akaflieg-karlsruhe.de], Idaflieg [https://idaflieg.de].
