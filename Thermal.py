@@ -64,7 +64,7 @@ class ThermalMixture():
     def remove_thermal(self, thermal):
         self.thermals.remove(thermal)
 
-    def plot2D(self, x_range, y_range, z, ax=None):
+    def plot2D(self, x_range, y_range, z, ax=None, v_min=None, v_max=None):
         if ax is None:
             fig = plt.figure()
             ax = fig.add_subplot(111)
@@ -72,7 +72,10 @@ class ThermalMixture():
         y = np.linspace(y_range[0], y_range[1], 400)
         x, y = np.meshgrid(x, y)
         strengths = self.get_strength_at(x=x, y=y, z=z)
-        contourf = ax.contourf(x, y, strengths, levels=100, cmap='viridis', vmin=-(np.max(np.abs(strengths))), vmax=np.max(np.abs(strengths)))
+        if v_min is not None and v_max is not None:
+            contourf = ax.contourf(x, y, strengths, levels=100, cmap='viridis', vmin=v_min, vmax=v_max)
+        else:
+            contourf = ax.contourf(x, y, strengths, levels=100, cmap='viridis', vmin=-(np.max(np.abs(strengths))), vmax=np.max(np.abs(strengths)))
         cbar = plt.colorbar(contourf, ax=ax)
         cbar.set_label('Thermal Strength [m/s]')
 
