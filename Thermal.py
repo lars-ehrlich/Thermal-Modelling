@@ -28,7 +28,7 @@ class BaseThermal(ABC):
 
     def plot3D(self, x_range, y_range, z, z_range=[0, 10], v_min=None, v_max=None, ax=None):
         if ax is None:
-            fig = plt.figure(figsize=(8, 6))
+            fig = plt.figure(figsize=(3, 3))
             ax = fig.add_subplot(111, projection='3d')
         x = np.linspace(x_range[0], x_range[1], 400)
         y = np.linspace(y_range[0], y_range[1], 400)

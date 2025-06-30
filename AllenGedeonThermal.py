@@ -31,21 +31,20 @@ class AllenGedeonThermal(BaseThermal):
     
 
     def visualize_thermal_structure(self):
-        fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 6))
+        fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(5, 3), sharey=True)
         # visualize the change of themral strength with height
         z = np.linspace(0, self.thermal_height, 1000)
         ax[0].plot(self.get_z_max_thermal_strength(z), z)
         # plot dotted line for the maximum thermal strength and 0
-        ax[0].axvline(x=self.strength, linestyle='--', color='k')
         ax[0].axvline(x=0, linestyle='--', color='k')
+        ax[0].set_xlim(0 -0.1 , 1.1 * self.strength)
         ax[0].set_ylabel('Height  [m]')
         ax[0].set_xlabel('Thermal strength [m/s]')
         ax[0].set_title(f'Thermal strength = {self.strength} m/s')
 
         # visualize the change of thermal radius with height
         ax[1].plot(self.get_z_thermal_radius(z), z)
-        ax[1].set_ylabel('Height [m]')
         ax[1].set_xlabel('Thermal radius [m]')
         ax[1].set_title(f'Thermal diameter = {self.diameter} m')
 
-        fig.suptitle(f'Allen Gedeon Thermal with {self.thermal_height} m height')
+        fig.suptitle(f'Allen-Gedeon Thermal with {self.thermal_height} m height')
